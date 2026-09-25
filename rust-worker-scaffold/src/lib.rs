@@ -13,10 +13,7 @@ struct EchoResponse {
 }
 
 #[event(fetch)]
-async fn fetch(req: Request, env: Env, ctx: Context) -> Result<Response> {
-    // Optional: log panics to the Worker console instead of silently failing
-    console_error_panic_hook::set_once();
-
+async fn fetch(req: Request, env: Env, _ctx: Context) -> Result<Response> {
     let router = Router::new();
 
     router
